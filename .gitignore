@@ -4,3 +4,4 @@ package-lock.json
 
 # Environment variables, never commit this file
 the-rising-stars-firebase-adminsdk-o89ao-398b4baa74.json
+.runtimeconfig.json
