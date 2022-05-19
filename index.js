@@ -25,7 +25,7 @@ const db = admin.firestore();
 app.post('/userIdentities', async (req, res) => {
     try {
         console.log('req.body');
-        
+        const id = req.body.userId;
         const userJson = {
             userId: crypto.randomBytes(16).toString("hex"),
             name : req.body.name,
@@ -41,7 +41,7 @@ app.post('/userIdentities', async (req, res) => {
 
         };
         
-        const response = await db.collection("userIdentities").add(userJson);
+        const response = await db.collection("userIdentities").doc(userJson.userId).set(userJson);
         res.status(201).json({
             status: "success",
             message: "Create data successfully"
