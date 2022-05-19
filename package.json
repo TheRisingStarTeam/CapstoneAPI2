@@ -25,5 +25,13 @@
   "private": true,
   "version": "1.0.0",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camebangkitjuan/CapstoneAPI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/camebangkitjuan/CapstoneAPI/issues"
+  },
+  "homepage": "https://github.com/camebangkitjuan/CapstoneAPI#readme"
 }
