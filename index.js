@@ -68,6 +68,7 @@ app.get('/userIdentities/:id', async (req, res) => {
 
 // UPDATE USER IDENTITIES BY ID 
 app.put('/userIdentities/:id', async (req,res) => {
+
     const userJson = {
         name : req.body.name,
         dateOfBirth : req.body.dateOfBirth,
@@ -76,12 +77,22 @@ app.put('/userIdentities/:id', async (req,res) => {
         interest: req.body.interest,
         socialMedia: req.body.socialMedia,
         organizerId: crypto.randomBytes(16).toString("hex"),
-        history: req.body.history,
-        recommendations: req.body.recommendations
+        history: req.body.history
     };
 
     const userRef = db.collection("userIdentities").doc(req.params.id).update(userJson);
     res.json({message: 'Update user identities is successfully'});
+})
+
+// UPDATE RECOMMENDATIONS BY ID 
+app.put('/recommendation/:id', async (req,res) => {
+
+    const recommendationJson = {
+        recommendations: req.body.recommendations
+    };
+
+    const recommendationRef = db.collection("userIdentities").doc(req.params.id).update(recommendationJson);
+    res.json({message: 'Update recommendation is successfully'});
 })
 
 // DELETE USER IDENTITIES BY ID 
