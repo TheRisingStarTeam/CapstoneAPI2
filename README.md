@@ -19,9 +19,10 @@ There are 2 Url that you can use:
 
 # FIRESTORE DATABASE
 
-This is the way how you can interact to the firestore database collections
+This is the way how you can interact to the firestore database collections. 
+The first thing you have to do is : create userIdentities with the user data that you can get from Firebase Authentication
 
-## Collection userIdentities
+## Get All userIdentities
 
 ### Request
 
@@ -53,63 +54,36 @@ US-Central1
     
     The full results list has been hidden because the number of results is too large.
 
-## Create a new Thing
+## Get userIdentities By ID
 
 ### Request
+`GET /userIdentities/userId`
 
-`POST /thing/`
+userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
 
-    curl -i -H 'Accept: application/json' -d 'name=Foo&status=new' http://localhost:7000/thing
+Asia-Southeast2
+`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/userId`
 
-### Response
+US-Central1
+`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/userId`
 
-    HTTP/1.1 201 Created
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 201 Created
-    Connection: close
-    Content-Type: application/json
-    Location: /thing/1
-    Content-Length: 36
-
-    {"id":1,"name":"Foo","status":"new"}
-
-## Get a specific Thing
-
-### Request
-
-`GET /thing/id`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
+    curl -i -H 'Accept: application/json' https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
 
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 36
+    Content-Type: application/json; charset=utf-8
+    Etag: W/"41-IPfm95HKh5kzWuFudFTb3W41eac"
+    Function-Execution-Id: 496m5n03wer1
+    X-Powered-By: Express
+    X-Cloud-Trace-Context: 807b6af84a8d31a69f872225ad861e94;o=1
+    Date: Thu, 09 Jun 2022 02:38:41 GMT
+    Server: Google Frontend
+    Content-Length: 65
+    Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
 
-    {"id":1,"name":"Foo","status":"new"}
-
-## Get a non-existent Thing
-
-### Request
-
-`GET /thing/id`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/9999
-
-### Response
-
-    HTTP/1.1 404 Not Found
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 404 Not Found
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 35
-
-    {"status":404,"reason":"Not found"}
+    {"userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2","email":"test@test.com"}
 
 ## Create another new Thing
 
