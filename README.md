@@ -121,6 +121,46 @@ US-Central1
     {"userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2","email":"test@test.com"}
     
 
+## Delete userIdentities By ID
+
+### Request
+
+`DELETE /userIdentities/userId`
+
+userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+Asia-Southeast2
+`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/userId`
+
+US-Central1
+`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/userId`
+
+    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/thing/1/](https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
+    curl -i -H 'Accept: application/json' -X DELETE https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
+
+### Response
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json; charset=utf-8
+    Etag: W/"34-HskEnffCc9+ISkwm6dgA7G28WhU"
+    Function-Execution-Id: p44m5zr3w1q8
+    X-Powered-By: Express
+    X-Cloud-Trace-Context: 2b71c64aaa46ff6238dae3082ebc7fdd;o=1
+    Date: Thu, 09 Jun 2022 03:36:27 GMT
+    Server: Google Frontend
+    Content-Length: 52
+    Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+
+    {"message":"Delete user identities is successfully"}
+
+
+
+
+
+
+
+
+
 ## Get list of Things again
 
 ### Request
@@ -288,25 +328,6 @@ US-Central1
     Status: 204 No Content
     Connection: close
 
-
-## Try to delete same Thing again
-
-### Request
-
-`DELETE /thing/id`
-
-    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/thing/1/
-
-### Response
-
-    HTTP/1.1 404 Not Found
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 404 Not Found
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 35
-
-    {"status":404,"reason":"Not found"}
 
 ## Get deleted Thing
 
