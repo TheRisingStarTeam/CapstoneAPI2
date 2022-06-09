@@ -89,7 +89,7 @@ US-Central1
     
     The full results list has been hidden because the number of results is too large.
 
-## Get userIdentities By ID
+## Get userIdentities Spesific By ID
 
 ### Request
 `GET /userIdentities/userId`
