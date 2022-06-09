@@ -40,7 +40,7 @@ Asia-Southeast2
 US-Central1
 `POST /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
-    curl -i -H 'Accept: application/json' -d 'email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
+    curl -i -H 'Accept: application/json' -X POST -d 'email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
 
 ### Response
 
