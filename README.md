@@ -101,7 +101,7 @@ The full results list has been hidden because the number of results is too large
 
 ### Request
 
-userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+userId & email can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2` and email `test@test.com`.
 
 #### Postman Request:
 `GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
@@ -132,9 +132,9 @@ userId can be found in firestore database. The example of userId: `8Tse0HYBOuddO
 ## Update userIdentities By ID - `PUT /userIdentities/userId`
 
 ### Request
+`important` : This endpoint can be used after created the userIdentities that contains data: email & userId. 
 
-The data type of each body request are:
-Please complete the body request with the list below.
+userId & email can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2` and email `test@test.com`.
 
 #### Postman Request:
 `PUT /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
@@ -172,7 +172,7 @@ Body (JSON):
     
 ### Response
 
-    HTTP/1.1 201 Created
+    HTTP/1.1 200 OK
     Content-Type: application/json; charset=utf-8
     Etag: W/"41-IPfm95HKh5kzWuFudFTb3W41eac"
     Function-Execution-Id: 496m5n03wer1
@@ -189,7 +189,7 @@ Body (JSON):
 
 ### Request
 
-userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+userId & email can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2` and email `test@test.com`.
 
 #### Postman Request:
 `DELETE /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
@@ -218,7 +218,41 @@ userId can be found in firestore database. The example of userId: `8Tse0HYBOuddO
     {"message":"Delete user identities is successfully"}
 
 
+## Update Recommendation By ID - `PUT /recommendation/userId`
+`important`: This endpoints can only be used for Machine learning developer to update the result data of recommendation from machine learning program that has been preprocessing the datasets.
 
+### Request
+This endpoint can only update the field recommendation in firestore database
+
+#### Postman Request:
+`PUT /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+`PUT /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+Body (JSON):
+
+        {
+                "recommendations": ["ads", "singadsasder", "fooasdastball", "maasdasdth"]
+        }
+  
+#### cURL Request
+
+    ....
+    
+### Response
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json; charset=utf-8
+    Etag: W/"41-IPfm95HKh5kzWuFudFTb3W41eac"
+    Function-Execution-Id: 496m5n03wer1
+    X-Powered-By: Express
+    X-Cloud-Trace-Context: 807b6af84a8d31a69f872225ad861e94;o=1
+    Date: Thu, 09 Jun 2022 02:38:41 GMT
+    Server: Google Frontend
+    Content-Length: 65
+    Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+
+    {"status":"success","message":"Update recommendation is successfully"}
 
 
 
