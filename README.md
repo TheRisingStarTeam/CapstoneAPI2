@@ -255,7 +255,35 @@ Body (JSON):
     {"status":"success","message":"Update recommendation is successfully"}
 
 
+# API - events
+## Get All Events `GET /events`
+### Request
+`GET https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/events`
+`GET https://us-central1-the-rising-stars.cloudfunctions.net/app/events`
 
+### Response (JSON)
 
-
-
+`{
+        "name": "The Breakaway Championship",
+        "active": false,
+        "categories": [
+            "Sport"
+        ],
+        "banner": "https://bduwuieniddii.com",
+        "rules": "lorem ipsum dolor sit amet",
+        "participants": [
+            "YkTvEksR31cjKOxHmF6VyS9HIKf1",
+            "eeeLojCHGAa070gCb45PRO46bhE3",
+            "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
+        ],
+        "description": "lorem ipsum dolor sit amet...",
+        "tos": "admin",
+        "hashtags": "risingstars2022",
+        "organizers": [
+            "YkTvEksR31cjKOxHmF6VyS9HIKf1",
+            "eeeLojCHGAa070gCb45PRO46bhE3",
+            "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
+        ],
+        "eventId": "024654e3219403c9002b7687f7e7ce63",
+        "postsId": "9d709374c8cbd019ba79be67d56d43d3"
+    }`
