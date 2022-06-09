@@ -40,9 +40,9 @@ Asia-Southeast2
 US-Central1
 `POST /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
-    curl -i -H 'Accept: application/json' -X POST -d 'email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
+    curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X POST https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
     
-    curl -i -H 'Accept: application/json' -X POST -d 'email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2' https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities)
+    curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X POST https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities
 
 ### Response
 
@@ -57,7 +57,7 @@ US-Central1
     Content-Length: 65
     Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
 
-    {"email":"test@test.com,"userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2","status":success}
+    {"status":"success","message":"Create user identity is successfully"}
 
 ## Get All userIdentities
 
