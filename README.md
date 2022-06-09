@@ -99,7 +99,7 @@ Body (JSON):
 
     []
     
-    The full results list has been hidden because the number of results is too large.
+The full results list has been hidden because the number of results is too large.
 
 ## Get userIdentities Spesific By ID
 
@@ -138,7 +138,7 @@ userId can be found in firestore database. The example of userId: `8Tse0HYBOuddO
 
 ### Request
 
-`POST /userIdentities/userId`
+`PUT /userIdentities/userId`
 
 The data type of each body request are:
 Please complete the body request with the list below.
@@ -152,30 +152,30 @@ Body (JSON):
 
         {
             "address": {
-                "addressLine1":"Jalan Cempaka No 1 Bogor",
-                "city": "Kota Bogor",
-                "country": "Indonesia",
-                "postal": "120987",
-                "provinceState": "Jawa Barat"
+                "addressLine1":"",
+                "city": "",
+                "country": "",
+                "postal": "",
+                "provinceState": ""
             },
-            "dateOfBirth": "March 1, 2000 at 4:01:24 PM UTC+7",
-            "history": ["VMw4nBYUEzZxS7LPV3ox","5f76577f7822d0e6cb29aa318e4c5568"],
-            "interest": ["art"],
-            "name":"test",
-            "phoneNumber": "08123456789",
+            "dateOfBirth": "",
+            "history": [],
+            "interest": [],
+            "name":"",
+            "phoneNumber": "",
             "socialMedia": {
-                "facebook": "test@facebook.com",
-                "instagram": "test@instagram.com"
+                "facebook": "",
+                "instagram": ""
             }
         }
-        
+       
+  Note: Interest can be filled by using the list category here https://docs.google.com/document/d/1npusVo3nQDopZ58SQ9OhBukyB6_3vl0NV5ckXOB0mNk/edit#
+  The history can be filled with the eventId in collection events (Firebase Firestore)
 
 #### cURL Request
 
-    curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X PUT https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
+    ....
     
-    curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X PUT /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities
-
 ### Response
 
     HTTP/1.1 201 Created
@@ -198,6 +198,13 @@ Body (JSON):
 `DELETE /userIdentities/userId`
 
 userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+#### Postman Request:
+`DELETE /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+`DELETE /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+#### cURL Request:
 
     curl -i -H 'Accept: application/json' -X DELETE https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
     
