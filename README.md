@@ -21,7 +21,7 @@ Asia-Southeast2
 US-Central1
 `GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
-# API ENDPOINTS - userIdentities
+# API - userIdentities
 
 This is the way how you can interact to the firestore database collections. 
 The first thing you have to do is : create userIdentities with the user data that you can get from Firebase Authentication. After that, you can update the userIdentities by completing all of the data you need.
@@ -30,9 +30,23 @@ The first thing you have to do is : create userIdentities with the user data tha
 
 ### Request
 
-`POST /userIdentities/`
+`POST /userIdentities/` 
 
 Please fill the body with the data that you can get from Firebase Authentication. The body only contains: `email & userId`
+
+#### Postman Request:
+`POST /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
+
+`POST /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
+
+Body (JSON): 
+
+        {
+            "email":"test@test.com",
+            "userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2"
+        }
+
+#### cURL Request:
 
     curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X POST https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
     
