@@ -41,6 +41,8 @@ US-Central1
 `POST /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
     curl -i -H 'Accept: application/json' -X POST -d 'email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
+    
+    curl -i -H 'Accept: application/json' -X POST -d 'email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2' https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities)
 
 ### Response
 
@@ -70,6 +72,7 @@ US-Central1
 `GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
     curl -i -H 'Accept: application/json' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
+    
     curl -i -H 'Accept: application/json' https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities
 
 ### Response
@@ -103,6 +106,7 @@ US-Central1
 `GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/userId`
 
     curl -i -H 'Accept: application/json' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
+    
     curl -i -H 'Accept: application/json' https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
 
 ### Response
@@ -135,7 +139,8 @@ Asia-Southeast2
 US-Central1
 `GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/userId`
 
-    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/thing/1/](https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
+    curl -i -H 'Accept: application/json' -X DELETE https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
+    
     curl -i -H 'Accept: application/json' -X DELETE https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
 
 ### Response
