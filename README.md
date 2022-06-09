@@ -14,13 +14,48 @@ Make sure you create user data first in Firebase Authentication. User data : ema
 After you created that, then you will use that data to create it in Firestore Database
 
 There are 2 Url that you can use:
-`https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1`
-`https://us-central1-the-rising-stars.cloudfunctions.net/app`
 
-# FIRESTORE DATABASE
+Asia-Southeast2
+`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
+
+US-Central1
+`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
+
+# API ENDPOINTS
 
 This is the way how you can interact to the firestore database collections. 
-The first thing you have to do is : create userIdentities with the user data that you can get from Firebase Authentication
+The first thing you have to do is : create userIdentities with the user data that you can get from Firebase Authentication. After that, you can update the userIdentities by completing all of the data you need.
+
+## Create userIdentities
+
+### Request
+
+`POST /userIdentities/`
+
+Please fill the body with the data that you can get from Firebase Authentication. The body only contains: `email & userId`
+
+Asia-Southeast2
+`POST /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
+
+US-Central1
+`POST /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
+
+    curl -i -H 'Accept: application/json' -d 'email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
+
+### Response
+
+    HTTP/1.1 201 Created
+    Content-Type: application/json; charset=utf-8
+    Etag: W/"41-IPfm95HKh5kzWuFudFTb3W41eac"
+    Function-Execution-Id: 496m5n03wer1
+    X-Powered-By: Express
+    X-Cloud-Trace-Context: 807b6af84a8d31a69f872225ad861e94;o=1
+    Date: Thu, 09 Jun 2022 02:38:41 GMT
+    Server: Google Frontend
+    Content-Length: 65
+    Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+
+    {"email":"test@test.com,"userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2","status":success}
 
 ## Get All userIdentities
 
@@ -84,26 +119,7 @@ US-Central1
     Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
 
     {"userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2","email":"test@test.com"}
-
-## Create another new Thing
-
-### Request
-
-`POST /thing/`
-
-    curl -i -H 'Accept: application/json' -d 'name=Bar&junk=rubbish' http://localhost:7000/thing
-
-### Response
-
-    HTTP/1.1 201 Created
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 201 Created
-    Connection: close
-    Content-Type: application/json
-    Location: /thing/2
-    Content-Length: 35
-
-    {"id":2,"name":"Bar","status":null}
+    
 
 ## Get list of Things again
 
