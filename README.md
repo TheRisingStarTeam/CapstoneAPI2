@@ -21,7 +21,7 @@ Asia-Southeast2
 US-Central1
 `GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
-# API ENDPOINTS
+# API ENDPOINTS - userIdentities
 
 This is the way how you can interact to the firestore database collections. 
 The first thing you have to do is : create userIdentities with the user data that you can get from Firebase Authentication. After that, you can update the userIdentities by completing all of the data you need.
@@ -33,12 +33,6 @@ The first thing you have to do is : create userIdentities with the user data tha
 `POST /userIdentities/`
 
 Please fill the body with the data that you can get from Firebase Authentication. The body only contains: `email & userId`
-
-Asia-Southeast2
-`POST /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
-
-US-Central1
-`POST /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
     curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X POST https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
     
@@ -64,12 +58,6 @@ US-Central1
 ### Request
 
 `GET /userIdentities`
-
-Asia-Southeast2
-`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
-
-US-Central1
-`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
     curl -i -H 'Accept: application/json' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
     
@@ -99,12 +87,6 @@ US-Central1
 
 userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
 
-Asia-Southeast2
-`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/userId`
-
-US-Central1
-`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/userId`
-
     curl -i -H 'Accept: application/json' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
     
     curl -i -H 'Accept: application/json' https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
@@ -123,7 +105,42 @@ US-Central1
     Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
 
     {"userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2","email":"test@test.com"}
+
+## Update userIdentities By ID
+
+### Request
+
+`POST /userIdentities/userId`
+
+The data type of each body request are:
+Please complete the body request with the list below.
+     
+     address: map {addressLine1, city, country, postal, provinceState}, 
+     dateOfBirth: "timestamp", 
+     history: [array], 
+     interest: [array], 
+     name: "string", 
+     phoneNumber: int, 
+     socialMedia: map {facebook, instagram}
+
+    curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X PUT https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
     
+    curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X PUT /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities
+
+### Response
+
+    HTTP/1.1 201 Created
+    Content-Type: application/json; charset=utf-8
+    Etag: W/"41-IPfm95HKh5kzWuFudFTb3W41eac"
+    Function-Execution-Id: 496m5n03wer1
+    X-Powered-By: Express
+    X-Cloud-Trace-Context: 807b6af84a8d31a69f872225ad861e94;o=1
+    Date: Thu, 09 Jun 2022 02:38:41 GMT
+    Server: Google Frontend
+    Content-Length: 65
+    Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+
+    {"status":"success","message":"Update user identity is successfully"}
 
 ## Delete userIdentities By ID
 
@@ -132,12 +149,6 @@ US-Central1
 `DELETE /userIdentities/userId`
 
 userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
-
-Asia-Southeast2
-`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/userId`
-
-US-Central1
-`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/userId`
 
     curl -i -H 'Accept: application/json' -X DELETE https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
     
@@ -165,206 +176,4 @@ US-Central1
 
 
 
-
-## Get list of Things again
-
-### Request
-
-`GET /thing/`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 74
-
-    [{"id":1,"name":"Foo","status":"new"},{"id":2,"name":"Bar","status":null}]
-
-## Change a Thing's state
-
-### Request
-
-`PUT /thing/:id/status/changed`
-
-    curl -i -H 'Accept: application/json' -X PUT http://localhost:7000/thing/1/status/changed
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 40
-
-    {"id":1,"name":"Foo","status":"changed"}
-
-## Get changed Thing
-
-### Request
-
-`GET /thing/id`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 40
-
-    {"id":1,"name":"Foo","status":"changed"}
-
-## Change a Thing
-
-### Request
-
-`PUT /thing/:id`
-
-    curl -i -H 'Accept: application/json' -X PUT -d 'name=Foo&status=changed2' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:31 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 41
-
-    {"id":1,"name":"Foo","status":"changed2"}
-
-## Attempt to change a Thing using partial params
-
-### Request
-
-`PUT /thing/:id`
-
-    curl -i -H 'Accept: application/json' -X PUT -d 'status=changed3' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 41
-
-    {"id":1,"name":"Foo","status":"changed3"}
-
-## Attempt to change a Thing using invalid params
-
-### Request
-
-`PUT /thing/:id`
-
-    curl -i -H 'Accept: application/json' -X PUT -d 'id=99&status=changed4' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 41
-
-    {"id":1,"name":"Foo","status":"changed4"}
-
-## Change a Thing using the _method hack
-
-### Request
-
-`POST /thing/:id?_method=POST`
-
-    curl -i -H 'Accept: application/json' -X POST -d 'name=Baz&_method=PUT' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 41
-
-    {"id":1,"name":"Baz","status":"changed4"}
-
-## Change a Thing using the _method hack in the url
-
-### Request
-
-`POST /thing/:id?_method=POST`
-
-    curl -i -H 'Accept: application/json' -X POST -d 'name=Qux' http://localhost:7000/thing/1?_method=PUT
-
-### Response
-
-    HTTP/1.1 404 Not Found
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 404 Not Found
-    Connection: close
-    Content-Type: text/html;charset=utf-8
-    Content-Length: 35
-
-    {"status":404,"reason":"Not found"}
-
-## Delete a Thing
-
-### Request
-
-`DELETE /thing/id`
-
-    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/thing/1/
-
-### Response
-
-    HTTP/1.1 204 No Content
-    Date: Thu, 24 Feb 2011 12:36:32 GMT
-    Status: 204 No Content
-    Connection: close
-
-
-## Get deleted Thing
-
-### Request
-
-`GET /thing/1`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
-
-### Response
-
-    HTTP/1.1 404 Not Found
-    Date: Thu, 24 Feb 2011 12:36:33 GMT
-    Status: 404 Not Found
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 35
-
-    {"status":404,"reason":"Not found"}
-
-## Delete a Thing using the _method hack
-
-### Request
-
-`DELETE /thing/id`
-
-    curl -i -H 'Accept: application/json' -X POST -d'_method=DELETE' http://localhost:7000/thing/2/
-
-### Response
-
-    HTTP/1.1 204 No Content
-    Date: Thu, 24 Feb 2011 12:36:33 GMT
-    Status: 204 No Content
-    Connection: close
 
