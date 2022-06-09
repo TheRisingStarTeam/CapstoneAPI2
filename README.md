@@ -16,21 +16,19 @@ After you created that, then you will use that data to create it in Firestore Da
 There are 2 Url that you can use:
 
 Asia-Southeast2
-`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
+`https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
 
 US-Central1
-`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
+`https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
 
 # API - userIdentities
 
 This is the way how you can interact to the firestore database collections. 
 The first thing you have to do is : create userIdentities with the user data that you can get from Firebase Authentication. After that, you can update the userIdentities by completing all of the data you need.
 
-## Create userIdentities
+## Create userIdentities - `POST /userIdentities`
 
 ### Request
-
-`POST /userIdentities/` 
 
 Please fill the body with the data that you can get from Firebase Authentication. The body only contains: `email & userId`
 
@@ -67,11 +65,9 @@ Body (JSON):
 
     {"status":"success","message":"Create user identity is successfully"}
 
-## Get All userIdentities
+## Get All userIdentities - `GET /userIdentities`
 
 ### Request
-
-`GET /userIdentities`
 
 #### Postman Request:
 `GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
@@ -101,10 +97,9 @@ Body (JSON):
     
 The full results list has been hidden because the number of results is too large.
 
-## Get userIdentities Spesific By ID
+## Get userIdentities Spesific By ID - `GET /userIdentities/userId`
 
 ### Request
-`GET /userIdentities/userId`
 
 userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
 
@@ -134,11 +129,9 @@ userId can be found in firestore database. The example of userId: `8Tse0HYBOuddO
 
     {"userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2","email":"test@test.com"}
 
-## Update userIdentities By ID
+## Update userIdentities By ID - `PUT /userIdentities/userId`
 
 ### Request
-
-`PUT /userIdentities/userId`
 
 The data type of each body request are:
 Please complete the body request with the list below.
@@ -169,8 +162,9 @@ Body (JSON):
             }
         }
        
-  Note: Interest can be filled by using the list category here https://docs.google.com/document/d/1npusVo3nQDopZ58SQ9OhBukyB6_3vl0NV5ckXOB0mNk/edit#
-  The history can be filled with the eventId in collection events (Firebase Firestore)
+  Note: 
+  The history can be filled with the eventId in collection events (Firebase Firestore). Interest can be filled by using the list category here https://docs.google.com/document/d/1npusVo3nQDopZ58SQ9OhBukyB6_3vl0NV5ckXOB0mNk/edit#
+  
 
 #### cURL Request
 
@@ -191,11 +185,9 @@ Body (JSON):
 
     {"status":"success","message":"Update user identity is successfully"}
 
-## Delete userIdentities By ID
+## Delete userIdentities By ID - `DELETE /userIdentities/userId`
 
 ### Request
-
-`DELETE /userIdentities/userId`
 
 userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
 
