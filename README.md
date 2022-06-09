@@ -232,7 +232,7 @@ This endpoint can only update the field recommendation in firestore database
 Body (JSON):
 
         {
-                "recommendations": ["ads", "singadsasder", "fooasdastball", "maasdasdth"]
+                "recommendations": ["sport", "gaming", "music"]
         }
   
 #### cURL Request
