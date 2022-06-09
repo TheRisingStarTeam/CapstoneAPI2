@@ -73,6 +73,13 @@ Body (JSON):
 
 `GET /userIdentities`
 
+#### Postman Request:
+`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities`
+
+`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities`
+
+#### cURL Request:
+
     curl -i -H 'Accept: application/json' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
     
     curl -i -H 'Accept: application/json' https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities
@@ -101,6 +108,13 @@ Body (JSON):
 
 userId can be found in firestore database. The example of userId: `8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
 
+#### Postman Request:
+`GET /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+`GET /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+#### cURL Request:
+
     curl -i -H 'Accept: application/json' https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
     
     curl -i -H 'Accept: application/json' https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2
@@ -128,14 +142,35 @@ userId can be found in firestore database. The example of userId: `8Tse0HYBOuddO
 
 The data type of each body request are:
 Please complete the body request with the list below.
-     
-     address: map {addressLine1, city, country, postal, provinceState}, 
-     dateOfBirth: "timestamp", 
-     history: [array], 
-     interest: [array], 
-     name: "string", 
-     phoneNumber: int, 
-     socialMedia: map {facebook, instagram}
+
+#### Postman Request:
+`PUT /https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+`PUT /https://us-central1-the-rising-stars.cloudfunctions.net/app/userIdentities/8Tse0HYBOuddOOSGM7wAtXtfSIZ2`
+
+Body (JSON):
+
+        {
+            "address": {
+                "addressLine1":"Jalan Cempaka No 1 Bogor",
+                "city": "Kota Bogor",
+                "country": "Indonesia",
+                "postal": "120987",
+                "provinceState": "Jawa Barat"
+            },
+            "dateOfBirth": "March 1, 2000 at 4:01:24 PM UTC+7",
+            "history": ["VMw4nBYUEzZxS7LPV3ox","5f76577f7822d0e6cb29aa318e4c5568"],
+            "interest": ["art"],
+            "name":"test",
+            "phoneNumber": "08123456789",
+            "socialMedia": {
+                "facebook": "test@facebook.com",
+                "instagram": "test@instagram.com"
+            }
+        }
+        
+
+#### cURL Request
 
     curl -d "email=test@test.com&userId=8Tse0HYBOuddOOSGM7wAtXtfSIZ2" -X PUT https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/userIdentities
     
