@@ -145,20 +145,20 @@ Body (JSON):
 
         {
             "address": {
-                "addressLine1":"",
-                "city": "",
-                "country": "",
-                "postal": "",
-                "provinceState": ""
+                "addressLine1":"Jalan Merdeka No 1 Jakarta",
+                "city": "Kota Jakarta",
+                "country": "Indonesia",
+                "postal": "10250",
+                "provinceState": "DKI Jakarta"
             },
-            "dateOfBirth": "",
-            "history": [],
-            "interest": [],
-            "name":"",
-            "phoneNumber": "",
+            "dateOfBirth": "December 25, 2000 at 4:01:24 PM UTC+7",
+            "history": ["024654e3219403c9002b7687f7e7ce63","0ad868669641b86d8aee8243b7df050f"],
+            "interest": ["sport", "gaming", "music"],
+            "name":"Adul",
+            "phoneNumber": "08123456789",
             "socialMedia": {
-                "facebook": "",
-                "instagram": ""
+                "facebook": "adul@facebook.com",
+                "instagram": "adul@instagram.com"
             }
         }
        
