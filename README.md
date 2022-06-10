@@ -352,3 +352,34 @@ Body (JSON):
                 "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
             ]
         }
+
+## Add Events by ID `POST /events`
+### Request
+`POST https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/events`
+`POST https://us-central1-the-rising-stars.cloudfunctions.net/app/events`
+
+Body (JSON): 
+```
+        {
+            "active":false,
+            "assignments":["text", "images", "video"],
+            "banner":"https://bduwuieniddii.com",
+            "categories":["kids","teen"],
+            "description": "lorem ipsum dolor sit amet...",
+            "hashtags": "risingstars2022",
+            "name":"event lomba apa aja",
+            "organizers": ["YkTvEksR31cjKOxHmF6VyS9HIKf1","eeeLojCHGAa070gCb45PRO46bhE3","3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"],
+            "participants": ["YkTvEksR31cjKOxHmF6VyS9HIKf1","eeeLojCHGAa070gCb45PRO46bhE3","3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"],
+            "rules": "lorem ipsum dolor sit amet",
+            "tos": "admin"
+        }
+ ```
+ ### Response (JSON)
+If success, your will get this response:
+```
+{
+    "status": "success",
+    "message": "Create event is successfully"
+}
+```
+
