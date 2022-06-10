@@ -402,3 +402,15 @@ If success, your will get this response:
     "message": "Update event is successfully"
 }
 ```
+## Delete Events by ID `DELETE /events/id`
+### Request
+`DELETE https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/events/id`
+`DELETE https://us-central1-the-rising-stars.cloudfunctions.net/app/events/id`
+
+ ### Response (JSON)
+If success, your will get this response:
+```
+{
+    "message": "Delete event is successfully"
+}
+```
