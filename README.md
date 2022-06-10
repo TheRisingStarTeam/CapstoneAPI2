@@ -353,7 +353,7 @@ Body (JSON):
             ]
         }
 
-## Add Events by ID `POST /events`
+## Add New Event `POST /events`
 ### Request
 `POST https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/events`
 `POST https://us-central1-the-rising-stars.cloudfunctions.net/app/events`
@@ -382,4 +382,23 @@ If success, your will get this response:
     "message": "Create event is successfully"
 }
 ```
+## Update Events by ID `PUT /events/id`
+### Request
+`PUT https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/events/id`
+`PUT https://us-central1-the-rising-stars.cloudfunctions.net/app/events/id`
 
+Body (JSON): 
+```
+{
+
+    "name":"new event name"
+
+}
+```
+ ### Response (JSON)
+If success, your will get this response:
+```
+{
+    "message": "Update event is successfully"
+}
+```
