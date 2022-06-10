@@ -264,32 +264,91 @@ Body (JSON):
 ### Response (JSON)
 Body (JSON): 
 
+```
+[
         {
-            "email":"test@test.com",
-            "userId":"8Tse0HYBOuddOOSGM7wAtXtfSIZ2"
-        }
-
-        {
-                "name": "The Breakaway Championship",
-                "active": false,
                 "categories": [
                     "Sport"
                 ],
+                "hashtags": "risingstars2022",
+                "tos": "admin",
                 "banner": "https://bduwuieniddii.com",
-                "rules": "lorem ipsum dolor sit amet",
+                "active": false,
+                "postsId": "9d709374c8cbd019ba79be67d56d43d3",
                 "participants": [
                     "YkTvEksR31cjKOxHmF6VyS9HIKf1",
                     "eeeLojCHGAa070gCb45PRO46bhE3",
                     "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
                 ],
                 "description": "lorem ipsum dolor sit amet...",
-                "tos": "admin",
-                "hashtags": "risingstars2022",
                 "organizers": [
                     "YkTvEksR31cjKOxHmF6VyS9HIKf1",
                     "eeeLojCHGAa070gCb45PRO46bhE3",
                     "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
                 ],
-                "eventId": "024654e3219403c9002b7687f7e7ce63",
-                "postsId": "9d709374c8cbd019ba79be67d56d43d3" 
+                "rules": "lorem ipsum dolor sit amet",
+                "name": "The Breakaway Championship",
+                "eventId": "024654e3219403c9002b7687f7e7ce63"
+            },
+            {
+                "active": false,
+                "categories": [
+                    "Adult",
+                    "Dancing",
+                    "Teen"
+                ],
+                "organizers": [
+                    "YkTvEksR31cjKOxHmF6VyS9HIKf1",
+                    "eeeLojCHGAa070gCb45PRO46bhE3",
+                    "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
+                ],
+                "banner": "https://bduwuieniddii.com",
+                "hashtags": "risingstars2022",
+                "rules": "lorem ipsum dolor sit amet",
+                "tos": "admin",
+                "postsId": "1a14c8fa9d5b01af8ec4dc5ce297ed33",
+                "description": "lorem ipsum dolor sit amet...",
+                "name": "Diva Moves",
+                "eventId": "03a051692c24523921ea97905f682db6",
+                "participants": [
+                    "YkTvEksR31cjKOxHmF6VyS9HIKf1",
+                    "eeeLojCHGAa070gCb45PRO46bhE3",
+                    "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
+                ]
+        },
+   ]
+   ```
+     
+## Get All Events `GET /events`
+### Request
+`GET https://asia-southeast2-the-rising-stars.cloudfunctions.net/app-1/events/id`
+`GET https://us-central1-the-rising-stars.cloudfunctions.net/app/events/id`
+
+### Response (JSON)
+Body (JSON): 
+
+        {
+            "eventId": "0ff3d40b65b40f18f362901ded6a0d23",
+            "description": "membuat resep unik, mengupload ke sosial media",
+            "banner": "https://bit.ly/3yMNA6G",
+            "rules": "wajib follow ig masterchef2022",
+            "postsId": "0867555988cbc718f59f8f0cb32c625c",
+            "name": "event menari nari",
+            "active": true,
+            "participants": [
+                "YkTvEksR31cjKOxHmF6VyS9HIKf1",
+                "eeeLojCHGAa070gCb45PRO46bhE3",
+                "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
+            ],
+            "tos": "masterchef2022",
+            "categories": [
+                "cooking",
+                "food",
+                "chef"
+            ],
+            "organizers": [
+                "YkTvEksR31cjKOxHmF6VyS9HIKf1",
+                "eeeLojCHGAa070gCb45PRO46bhE3",
+                "3ZhUV7kd3vTR3iZVIbi1OHxXGLt1"
+            ]
         }
